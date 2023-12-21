@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #formulario {
+            flex: 1;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #animacao {
+            flex: 1;
+            background-color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bolinha {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: cair linear infinite, kicar ease-in-out infinite;
+        }
+
+        @keyframes cair {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes kicar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(98vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="formulario">
+        <h2>Formulário de Contato</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+    <div id="animacao">
+        <!-- Adiciona bolinhas à animação usando JavaScript -->
+    </div>
+</div>
+
+<script>
+    // Adiciona bolinhas à animação
+    for (let i = 0; i < 30; i++) {
+        criarBolinha();
+    }
+
+    function criarBolinha() {
+        const bolinha = document.createElement('div');
+        bolinha.className = 'bolinha';
+        bolinha.style.left = Math.random() * window.innerWidth + 'px';
+        bolinha.style.animationDuration = (Math.random() * 2 + 5) + 's'; // Define a duração da animação aleatoriamente
+        document.getElementById('animacao').appendChild(bolinha);
+    }
+</script>
+
+</body>
+</html>
