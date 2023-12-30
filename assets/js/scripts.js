@@ -1,71 +1,58 @@
 
+function onchangePassword(){
+    togglePassworderrors();
+    toggleButtonsDisable();
+}
 
-window.onclick = function (event) {
-    if (event.target === document.getElementById("cadastroModal")) {
-        document.getElementById("cadastroModal").style.display = "none";
+function onchangeEmail(){
+    toggleButtonsDisable();
+    toggleEmailerrors();
+}
+
+function isEmailValid(){
+    const email = form.email.value;
+    if (!email) {
+        return false;
     }
+    return validateEmail(email);
 }
 
-window.onkeydown = function (event) {
-    if (event.key === "Escape") {
-        document.getElementById("cadastroModal").style.display = "none";
+function isPasswordValid(){
+    const password = form.password.value;
+    if (!password){
+        return false;
     }
+    return true;
 }
 
-// Adicione esta lógica para alternar entre as seções de cadastro, login e esqueci minha senha
-
-document.getElementById("cadastroBtn").onclick = function () {
-    document.getElementById("cadastroModal").style.display = "block";
-    document.getElementById("cadastro").classList.add("active");
-    document.getElementById("login").classList.remove("active");
-    document.getElementById("esqueciSenha").classList.remove("active");
+function validateEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
 }
 
-document.getElementById("loginBtn").onclick = function () {
-    document.getElementById("cadastroModal").style.display = "block";
-    document.getElementById("login").classList.add("active");
-    document.getElementById("cadastro").classList.remove("active");
-    document.getElementById("esqueciSenha").classList.remove("active");
+function toggleEmailerrors() {
+    const email = form.email.value;
+    form.emailRequiredError().style.display = email ? "display" : "none";
+    form.emailInvalidError().style.display = validateEmail(email) ? "block" : "none";
 }
 
-document.getElementById("esqueciSenhaBtn").onclick = function () {
-    document.getElementById("cadastroModal").style.display = "block";
-    document.getElementById("cadastro").classList.remove("active");
-    document.getElementById("login").classList.remove("active");
-    document.getElementById("esqueciSenha").classList.add("active");
+function togglePassworderrors() {
+    const password = form.password.value;
+    form.passwordRequiredError().style.display = password ? "block" : "none";
 }
 
-
-
-function login() {
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-
-    firebase.auth().signInWithEmailAndPassword(email, senha)
-        .then((userCredential) => {
-            // Sucesso no login
-            alert('Login realizado com sucesso!');
-            // Redirecionar para outra página
-            window.location.href = 'sua_pagina_secreta.html';
-        })
-        .catch((error) => {
-            // Tratar erros
-            alert(error.message);
-        });
+function toggleButtonsDisable() {
+    const emailValid = isEmailValid();
+    form.recoverPassword.disabled = !emailValid;
+    const passwordValid = isPasswordValid();
+    form.loginButton.disabled = !emailValid || !passwordValid;
 }
 
-
-// Mantenha a lógica para abrir e fechar o modal
-
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-const firebaseConfig = {
-    apiKey: "SUA_API_KEY",
-    authDomain: "SEU_DOMINIO.firebaseapp.com",
-    projectId: "SEU_ID_DO_PROJETO",
-    storageBucket: "SEU_BUCKET.appspot.com",
-    messagingSenderId: "SEU_SENDER_ID",
-    appId: "SEU_APP_ID"
-  };
-
-firebase.initializeApp(firebaseConfig);
+const form = {
+    email: () => document.getElementById('email'),
+    emailInvalidError: () => document.getElementById('email-invalid-error'),
+    emailRequiredError: () => document.getElementById('email-required-error'),
+    loginButton: () => document.getElementById('login-button'),
+    password: () => document.getElementById('password'),
+    passwordRequiredError: () => document.getElementById('password-required-error'),
+    recoverPassword: () => document.getElementById('recover-password-button')
+}

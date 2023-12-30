@@ -9,6 +9,9 @@ header {
     color: #fff;
     text-align: center;
     padding: 20px;
+    height: 40vh;
+    background-position: center;
+    background-image: url(../img/banner-do-conceito-de-empresa-para-sustentabilidade-e-as-indústrias-verdes-desenvolvimento-sustentável-indústria-verde-209163170.jpg);
 }
 
 nav ul {
@@ -20,6 +23,12 @@ nav ul {
     position: fixed;
     width: 100%;
     top: 0;
+}
+.login{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
 }
 
 nav li {

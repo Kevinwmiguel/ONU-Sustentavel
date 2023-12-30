@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <div class="formulario">
+        <form action="examplo.html" id="authForm">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="Email">
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é invalido</div>
+            <label for="senha">Senha:</label>
+            <input type="password" name="password" onchange="onchangePassword()" id="password" required placeholder="Senha"> 
+            <div class="error" id="password-required-error">senha é obrigatória</div>
+            
+            <button disabled="true" id="recover-password-button">Recuperar senha</button>
+            <button type="button" id="login-button" disabled="true">Entrar</button>
+            <button type="button">Cadastrar</button>
+
+        </form>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
