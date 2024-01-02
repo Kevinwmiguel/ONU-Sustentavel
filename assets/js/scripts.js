@@ -35,6 +35,16 @@ function toggleButtonsDisable() {
     form.loginButton().disabled = !emailValid || !passwordValid;
 }
 
+function login()
+{
+    window.location.href = "../pages/home.html";
+}
+
+function register()
+{
+    window.location.href = "../pages/register.html";
+}
+
 function isPasswordValid(){
     const password = form.password().value;
     if (!password){
