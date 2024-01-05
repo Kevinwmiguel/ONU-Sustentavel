@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(34, 129, 14, 0.548);
+}
+
+input {
+    border: none;
+}
+
+form {
+    width: 300px;
+}
+
+header {
+    text-align: right;
+}
+
+button {
+    margin-bottom: 10px;
+    width: auto;
+}

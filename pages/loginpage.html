@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
-    
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="../assets/js/firebase-init.js"></script>
 </head>
 <body class="centralize">
     <div class="formulario">
-        <form action="examplo.html" id="authForm">
-            <label for="email">E-mail:</label>
+        <form id="authForm">
+            <label>E-mail:</label>
             <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="Email">
             <div class="error" id="email-required-error">Email é obrigatório</div>
             <div class="error" id="email-invalid-error">Email é invalido</div>
@@ -29,18 +30,5 @@
 <script src="../assets/js/scripts.js"></script>
 <script src="../assets/js/validate.js"></script>
 <script src="../assets/js/loading.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyDFwYvS4le5ZopouhaN5Lo7NcqANcaBZBE",
-        authDomain: "atv-ext-b16e6.firebaseapp.com",
-        projectId: "atv-ext-b16e6",
-        storageBucket: "atv-ext-b16e6.appspot.com",
-        messagingSenderId: "178485941221",
-        appId: "1:178485941221:web:88b1464596177c501f950c",
-         measurementId: "G-7LDQJBL0YL"
-    };
-    firebase.initializeApp(firebaseConfig);
-</script>
+
 </html>

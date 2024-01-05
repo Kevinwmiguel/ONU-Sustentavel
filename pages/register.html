@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="../assets/js/firebase-init.js"></script>
 </head>
-<body>
-    registrar
+<body class="centralize">
+    <form class="form-field">
+        <div>
+            <div><label>Email</label></div>
+            <input id="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é invalido</div>
+        </div>
+        <div>
+            <div><label>Senha</label></div>
+            <input id="password" type="password" placeholder="Senha" onchange="onChangePassword()">
+            <div class="error" id="password-required-error">
+                Senha é obrigatória
+            </div>
+            <div class="error" id="password-min-length-error">
+                Senha deve ter pelo menos 6 caracteres
+            </div>
+        </div>
+        <div>
+            <div><label>Confirmar Senha</label></div>
+            <input id="confirmPassword" type="password" placeholder="Confirmar senha" onchange="onChangeConfirmPassword()">
+            <div class="error" id="password-doesnt-match-error">
+                As senhas não são iguais
+            </div>
+        </div>
+        <div>
+            <button type="button" disabled="true" id="register-button" onclick="register()">Registrar</button>
+        </div><div>
+            <button type="button">Login</button>
+        </div>
+    </form>
 </body>
+<link rel="stylesheet" href="../assets/css/register.css">
+<script src="../assets/js/register.js"></script>
+<script src="../assets/js/validate.js"></script>
+<script src="../assets/js/loading.js"></script>
+
 </html>
+
