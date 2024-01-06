@@ -20,4 +20,22 @@ header {
 button {
     margin-bottom: 10px;
     width: auto;
+    margin-right: 25px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+.fab {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 2px 2px 2px grey;
+    cursor: pointer;
+    position: fixed;
+    bottom: 32px;
+    right: 0;
 }
