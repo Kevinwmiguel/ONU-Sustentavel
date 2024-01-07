@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <link rel="stylesheet" href="/assets/css/article.css">
+    <script src="../assets/js/loading.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-init.js"></script>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    
+</head>
+<body>
+    <header>
+        <button type="button" id="logout" onclick="logout()">Sair</button>
+    </header>
+    <main>
+        <form>
+            <div>
+                <div><label>Artigo*</label></div>
+                <input id="article" type="radio" name="article">
+            </div>
+            <div>
+                <div><label>data*</label></div>
+                <input id="date" type="date" onchange="onChangeDate()">
+                <div class="error" id="date-required-error">
+                    Data obrigatória
+                </div>
+                <div class="error" id="date-invalid-error">
+                    Data inválida
+                </div>
+                
+            </div>
+            <div>
+                <div><label>Titulo*</label></div>
+                <input id="title" type="text" oninput="onChangeTitle()">
+                <div class="error" id="title-required-error">
+                    Titulo obrigatório
+                </div>
+            </div>
+            <div>
+                <div><label>Descrição</label></div>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <div><label>Area*</label></div>
+                <select onchange="onChangeType()" id="activity-area">
+                    <option value="">Area de atuacao</option>
+                    <option>Jardim</option>
+                    <option>Casa</option>
+                    <option>Praia</option>
+                    <option>Rua</option>
+                </select>
+                <div class="error" id="area-required-error">
+                    Area obrigatória
+                </div>
+            </div>
+            <button type="button" disabled id="postButton" onclick="postArticle()">Publicar</button>
+            <button type="button" onclick="cancelArticle()">Cancelar</button>
+        </form>
+    </main>
+</body>
+<script src="../assets/js/article.js"></script>
+<script src="../assets/js/auth-guard.js"></script>
+</html>

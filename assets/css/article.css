@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(34, 129, 14, 0.548);
+}
+
+input {
+    border: none;
+}
+
+form {
+    width: 300px;
+}
+
+header {
+    text-align: right;
+}
+
+button {
+    margin-bottom: 10px;
+    width: auto;
+    margin-right: 25px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+.fab {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 2px 2px 2px grey;
+    cursor: pointer;
+    position: fixed;
+    bottom: 32px;
+    right: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
