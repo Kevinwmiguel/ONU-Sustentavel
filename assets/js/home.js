@@ -18,17 +18,9 @@ function createArticle() {
 
 function findArticles(user) {
     showLoading();
-    firebase.firestore()
-        .collection('Artigos')
-        .where('user.uid', '==', user.uid)
-        .orderBy('date', 'desc')
-        .get()
-        .then(snapshot => {
+    articleService.findByuser(user)
+        .then(articlesData => {
             hideLoading();
-            const articlesData = snapshot.docs.map(doc => ({
-                ...doc.data(),
-                uid: doc.id
-            }));
             addArticlesToScreen(articlesData);
         })
         .catch(error => {
@@ -45,10 +37,20 @@ function addArticlesToScreen(articles) {
     articles.forEach(article => {
         const li = document.createElement('li');
         li.classList.add(article.type);
+        li.id = article.uid;
         li.addEventListener('click', () => {
             window.location.href = "../pages/add-article.html?uid=" + article.uid;
         });
         
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = "Remover";
+        deleteButton.classList.add('outline', 'dange');
+        deleteButton.addEventListener('click', event => {
+            event.stopPropagation();
+            askRemoveArticle(article);
+        })
+        li.appendChild(deleteButton);
+
         const date = document.createElement('p');
         date.innerHTML = formatDate(article.date);
         li.appendChild(date);
@@ -65,6 +67,31 @@ function addArticlesToScreen(articles) {
 
         orderedList.appendChild(li);
     });
+}
+
+function askRemoveArticle(article){
+    const shouldRemove = confirm('Deseja remover?');
+    if (shouldRemove) {
+        removeArticle(article);
+    }
+}
+
+function removeArticle(article){
+    showLoading();
+
+    firebase.firestore()
+        .collection("Artigos")
+        .doc(article.uid)
+        .delete()
+        .then(() => {
+            hideLoading();
+            document.getElementById(article.uid).remove();
+        })
+        .catch(error => {
+            hideLoading();
+            console.log(error);
+            alert('erro ao apagar o artigo')
+        })
 }
 
 function formatDate(date) {

@@ -17,13 +17,13 @@ function findArticlesByUid(uid){
     showLoading();
 
     firebase.firestore()
-        .collection("Articles")
+        .collection("Artigos")
         .doc(uid)
         .get()
         .then(doc => {
             hideLoading();
             if (doc.exists){
-                fillArticleScreen(doc.data);
+                fillArticleScreen(doc.data());
                 togglePostButtonDisable();
             } else {
                 alert("Documento não encontrado");
@@ -45,7 +45,9 @@ function fillArticleScreen(article){
         form.helptype().checked = true;
     }
 
-    form.date().value = article.date;
+    if (article.date) {
+        form.date().value = article.date;
+    }
     form.title().value = article.title;
     form.selectarea().value = article.selectarea;
     if (article.description) {
@@ -105,10 +107,33 @@ function isFormValid() {
 function postArticle(){
     showLoading();
     const myArticle = createArticle();
+    
+    if (isNewArticle()){
+        save(myArticle);
+    } else {
+        update(myArticle);
+    }
+}
 
+function update(article) {
+    firebase.firestore()
+        .collection("Artigos")
+        .doc(getArticleID())
+        .update(article)
+        .then(() => {
+            hideLoading();
+            window.location.href = "../pages/home.html"
+        })
+        .catch(() => {
+            hideLoading();
+            alert('Erro ao publicar artigo');
+        })
+}
+
+function save(article){
     firebase.firestore()
         .collection('Artigos')
-        .add(myArticle)
+        .add(article)
         .then(() => {
             hideLoading();
             window.location.href = "../pages/home.html"
@@ -145,4 +170,3 @@ const form = {
     helptype: () => document.getElementById('article'),
     description: () => document.getElementById('description')
 }
-
