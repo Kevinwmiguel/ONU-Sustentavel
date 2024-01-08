@@ -35,38 +35,44 @@ function addArticlesToScreen(articles) {
     orderedList.innerHTML = ""; // Limpar a lista antes de adicionar os novos itens
 
     articles.forEach(article => {
-        const li = document.createElement('li');
-        li.classList.add(article.type);
-        li.id = article.uid;
-        li.addEventListener('click', () => {
-            window.location.href = "../pages/add-article.html?uid=" + article.uid;
-        });
-        
-        const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = "Remover";
-        deleteButton.classList.add('outline', 'dange');
-        deleteButton.addEventListener('click', event => {
-            event.stopPropagation();
-            askRemoveArticle(article);
-        })
-        li.appendChild(deleteButton);
-
-        const date = document.createElement('p');
-        date.innerHTML = formatDate(article.date);
-        li.appendChild(date);
-
-        const type = document.createElement('p');
-        type.innerHTML = article.type;
-        li.appendChild(type);
+        const li = createArticleListItem(article);
+        li.appendChild(createDeleteButton(article));
+        li.appendChild(createParagraph(formatDate(article.date)));
+        li.appendChild(createParagraph(article.type));
 
         if (article.description) {
-            const description = document.createElement('p');
-            description.innerHTML = article.description;
-            li.appendChild(description);
+            li.appendChild(createParagraph(article.description));
         }
 
         orderedList.appendChild(li);
     });
+}
+
+function createArticleListItem(article) {
+    const li = document.createElement('li');
+    li.classList.add(article.type);
+    li.id = article.uid;
+    li.addEventListener('click', () => {
+        window.location.href = "../pages/add-article.html?uid=" + article.uid;
+    });
+    return li;
+}
+
+function createDeleteButton(article){
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = "Remover";
+    deleteButton.classList.add('outline', 'dange');
+    deleteButton.addEventListener('click', event => {
+        event.stopPropagation();
+        askRemoveArticle(article);
+    })
+    return deleteButton;
+}
+
+function createParagraph(value){
+    const element = document.createElement('p');
+    element.innerHTML = value;
+    return element;
 }
 
 function askRemoveArticle(article){
@@ -79,10 +85,7 @@ function askRemoveArticle(article){
 function removeArticle(article){
     showLoading();
 
-    firebase.firestore()
-        .collection("Artigos")
-        .doc(article.uid)
-        .delete()
+    articleService.remove(article)
         .then(() => {
             hideLoading();
             document.getElementById(article.uid).remove();

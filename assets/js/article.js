@@ -16,14 +16,11 @@ function isNewArticle(){
 function findArticlesByUid(uid){
     showLoading();
 
-    firebase.firestore()
-        .collection("Artigos")
-        .doc(uid)
-        .get()
-        .then(doc => {
+    articleService.findByUID(uid)
+        .then(article => {
             hideLoading();
-            if (doc.exists){
-                fillArticleScreen(doc.data());
+            if (article){
+                fillArticleScreen(article);
                 togglePostButtonDisable();
             } else {
                 alert("Documento não encontrado");
@@ -33,6 +30,7 @@ function findArticlesByUid(uid){
         .catch(() => {
             hideLoading();
             alert("Erro ao recuperar o documento");
+            window.location.href = "../pages/home.html"
         });
 }
 
@@ -116,10 +114,7 @@ function postArticle(){
 }
 
 function update(article) {
-    firebase.firestore()
-        .collection("Artigos")
-        .doc(getArticleID())
-        .update(article)
+    articleService.update(article)
         .then(() => {
             hideLoading();
             window.location.href = "../pages/home.html"
@@ -131,9 +126,7 @@ function update(article) {
 }
 
 function save(article){
-    firebase.firestore()
-        .collection('Artigos')
-        .add(article)
+    articleService.save(article)
         .then(() => {
             hideLoading();
             window.location.href = "../pages/home.html"
@@ -169,4 +162,8 @@ const form = {
     articletype: () => document.getElementById('article'),
     helptype: () => document.getElementById('article'),
     description: () => document.getElementById('description')
+}
+
+function cancelArticle() {
+    window.location.href = "../pages/home.html"
 }
