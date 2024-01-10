@@ -15,9 +15,21 @@
     
 </head>
 <body>
+    
     <header>
-        <button type="button" id="logout" onclick="logout()">Sair</button>
+        <h1>Comunidade Sustentável Júnior</h1>
+        <p>Transformando a sociedade com inovação e sustentabilidade</p>
     </header>
+    <nav>
+        <ul class="cabecalho">
+            <li><a href="#home">Comunidade</a></li>
+            <li><a href="#about">Perfil</a></li>
+            <li><a href="../pages/home.html">Meus Artigos</a></li>
+            <li><a href="Contato.html">Contato</a></li>
+            <button type="button" id="logout" onclick="logout()">Sair</button>
+        </ul> 
+    </nav>
+    
     <main>
         <form>
             <div>
@@ -63,6 +75,9 @@
             <button type="button" onclick="cancelArticle()">Cancelar</button>
         </form>
     </main>
+    <footer>
+        <p>&copy; 2023 Comunidade Sustentável Júnior</p>
+    </footer>
 </body>
 <script src="../assets/js/article.js"></script>
 <script src="../assets/js/auth-guard.js"></script>

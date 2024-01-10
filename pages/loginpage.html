@@ -11,9 +11,9 @@
 
 <body>
     <header>
-        <div>
-            <h1>
-                Comunidade sustentável junior
+        <div class="headerdiv">
+            <h1> 
+                Comunidade sustentável júnior
             </h1>
         </div>
     </header>
@@ -25,18 +25,18 @@
                     <div class="h2div"><h2>Login</h2></div>
                     <div class="emaildiv">
                         <label>E-mail:</label>
-                        <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="Email">
-                        <div class="error" id="email-required-error">Email é obrigatório</div>
-                        <div class="error" id="email-invalid-error">Email é invalido</div>
+                        <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="usuario@email.com">
+                        <div class="error" id="email-required-error">Email é obrigatório ou está inválido</div>
+                    
                     </div>
                     <div class="senhadiv">
                         <label for="senha">Senha:</label>
-                        <input type="password" name="password" onchange="onchangePassword()" id="password" required placeholder="Senha"> 
-                        <div class="error" id="password-required-error">senha é obrigatória</div>    
+                        <input type="password" name="password" onchange="onchangePassword()" id="password" required placeholder="********"> 
+                        <div class="error" id="password-required-error">Senha é obrigatória</div>    
                     </div>
                     <div class="botoesdiv">
                         <div class="recsenha">
-                            <button disabled="true" id="recover-password-button" onclick="recoverPassword()">Esqueceu a senha</button>
+                            <button class="botao3" disabled="true" id="recover-password-button" onclick="recoverPassword()">Esqueceu a senha?</button>
                         </div>
                         <div class="entcad">
                             <button class="botao1" type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
@@ -47,6 +47,12 @@
             </fieldset>
         </div>
     </main>
+
+    <footer>
+        <div class="footerdiv">
+            <h4>© 2023 Comunidade Sustentável Júnior</h4>
+        </div>
+    </footer>
 </body>
 
 <link rel="stylesheet" href="../assets/css/login.css">

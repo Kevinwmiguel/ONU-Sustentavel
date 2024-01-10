@@ -2,3 +2,35 @@
     color: red;
     display: none;
 }
+
+header {
+    color: #85A840;
+    padding: 20px;
+    margin: 0;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/banner.jpg);
+}
+
+footer {
+    background-color: #85AB7F;
+    color: #C7D9C4;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    bottom: 0;
+    width: 100%;
+}
+
+.barra-verde {
+    height: 4vh;
+    background-color: #1A3717;
+}

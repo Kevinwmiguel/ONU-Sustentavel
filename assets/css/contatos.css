@@ -1,0 +1,118 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header > h1 , header > p{
+    color: #85AB7F;
+    text-shadow: 2px 2px #1a3717;
+    font-size: 2.5rem;
+   
+}
+
+header > p {
+    font-size: 1.5rem;
+    width: 45%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #85A840;
+    overflow: hidden;
+    background-color: #1A3717;
+    width: 100%;
+    
+    top: 0;
+}
+.login{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav li {
+    float: left;
+    list-style: none;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#logout{
+    margin: 10px;
+    padding: 10px;
+    color: #85A840;
+    background-color: #1A3717;
+    border-style: none;
+
+}
+
+nav #logout:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+nav a {
+    display: block;
+    color: #85A840;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.aa{
+    width: 100%;
+    height: 29vh;
+    background-color: #1A3717;
+}
+img{
+    width: 100%;
+    height: 25vh;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tatil{
+    width: 110vh;
+}
+
+main .tatil h1{
+    color: #C7D9C4;
+    font-size: 30px;
+    height: 5vh;
+    width: 100vh;
+    border-radius: 5px;
+    background-color: #85AB7F;
+    text-align: center;
+
+}
+
+footer {
+    background-color: #85AB7F;
+    color: #C7D9C4;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}

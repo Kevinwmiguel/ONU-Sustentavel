@@ -36,14 +36,19 @@ function addArticlesToScreen(articles) {
 
     articles.forEach(article => {
         const li = createArticleListItem(article);
-        li.appendChild(createDeleteButton(article));
-        li.appendChild(createParagraph(formatDate(article.date)));
-        li.appendChild(createParagraph(article.type));
-
+        var novaDiv = document.createElement('div');
+        novaDiv.classList.add('mainbar');
+        var h2 = createParagraphH2(article.title);
+        var p = createParagraph(formatDate(article.date));
+        
+        novaDiv.appendChild(h2);
+        novaDiv.appendChild(p);
+        
+        li.appendChild(novaDiv);
         if (article.description) {
             li.appendChild(createParagraph(article.description));
         }
-
+        li.appendChild(createDeleteButton(article));
         orderedList.appendChild(li);
     });
 }
@@ -71,6 +76,12 @@ function createDeleteButton(article){
 
 function createParagraph(value){
     const element = document.createElement('p');
+    element.innerHTML = value;
+    return element;
+}
+
+function createParagraphH2(value){
+    const element = document.createElement('h2');
     element.innerHTML = value;
     return element;
 }

@@ -1,9 +1,56 @@
-main{
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+
+body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    box-sizing: border-box;
 }
+
+header {
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.headerdiv {
+    width: 100%;
+    height: 80px;
+    background-color: #1A3717;
+    padding-top: 2%;
+}
+
+.headerdiv h1 {
+    margin: 0;
+    color: white;
+}
+
+
+footer {
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    position: fixed;
+    bottom: 0;
+}
+
+.footerdiv {
+    width: 100%;
+    height: 60px;
+    background-color: #85AB7F;
+    padding-top: 0.001%;
+}
+
+main{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .centralize{
     display: flex;
@@ -12,14 +59,12 @@ main{
 }
 .formulario{
     width: 100%;
-    height: 100vh;
-    margin: 0;
+    margin: 2.78rem 0 2.78rem 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
-    
 }
 
 #authForm{
@@ -30,6 +75,7 @@ main{
 .error{
     color: red;
     display: none;
+    margin: 20px 0 0 10px;
 }
 
 .loading {
@@ -49,6 +95,7 @@ fieldset {
     border: solid 2px black;
     border-radius: 10px 10px 0 0;
     padding: 0;
+    width: 30rem;
 }
 
 form {
@@ -58,12 +105,15 @@ form {
 
 form h2 {
     text-align: center;
+    font-size: 40px;
+    color: #1A3717;
+    font-family: 'Lato', sans-serif;
 }
 
 .h2div {
     border-radius: 10px 10px 0 0;
     background-color: #85AB7F;
-    border-bottom: solid 1px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.044);
 }
 
 .emaildiv {
@@ -73,13 +123,14 @@ form h2 {
 }
 
 .emaildiv label {
-    margin: 0 0 5px 10px;
-    font-size: 20px;
+    margin: 3rem 0 1rem 10px;
+    font-size: 2rem;
     order: -1;
 }
 
 .emaildiv input {
-    padding: 10px;
+    padding: 0.8rem;
+    font-size: 1.6rem;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
     border: rgba(255, 255, 255, 0.5);
 }
@@ -96,12 +147,13 @@ input[type="email"]::placeholder {
 
 .senhadiv label {
     margin: 0 0 5px 10px;
-    font-size: 20px;
+    font-size: 2rem;
     order: -1;
 }
 
 .senhadiv input {
-    padding: 10px;
+    padding: 0.8rem;
+    font-size: 1.6rem;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
     border: rgba(255, 255, 255, 0.5);
 }
@@ -123,9 +175,11 @@ input[type="password"]::placeholder {
     background-color: rgba(32, 65, 32, 0.6);
     color: rgb(255, 255, 255);
     border: 0;
+    margin-top: 1rem;
     box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
     margin-bottom: 20px;
-    padding: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.5rem;
 }
 
 #recover-password-button:not([disabled]) {
@@ -140,7 +194,7 @@ input[type="password"]::placeholder {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
+    margin: 2rem 20px;
 }
 
 .entcad .botao1 {
@@ -149,7 +203,8 @@ input[type="password"]::placeholder {
     border: 0;
     box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
     margin-bottom: 20px;
-    padding: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.5rem;
 }
 
 .entcad .botao2 {
@@ -158,11 +213,16 @@ input[type="password"]::placeholder {
     border: 0;
     box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
     margin-bottom: 20px;
-    padding: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.5rem;
 }
 
 .botao1:enabled {
     cursor: pointer;
     background-color: rgba(32, 65, 32);
     color: rgb(255, 255, 255); 
+}
+
+.botao1, .botao2, .botao3:hover {
+    cursor: pointer;
 }

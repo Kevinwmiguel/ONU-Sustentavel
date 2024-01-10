@@ -13,9 +13,68 @@ form {
     width: 300px;
 }
 
-header {
-    text-align: right;
+header > h1 , header > p{
+    color: #85AB7F;
+    text-shadow: 2px 2px #1a3717;
+    font-size: 2.5rem;
 }
+
+header > p {
+    font-size: 1.5rem;
+    width: 45%;
+    text-align: center;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #85A840;
+    overflow: hidden;
+    background-color: #1A3717;
+    width: 100%;
+    top: 0;
+}
+
+#logout{
+    background-color: #1A3717;
+    color: #85A840;
+    border: none;
+}
+#logout:hover {
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+nav li {
+    float: left;
+    list-style: none;
+}
+
+nav a, nav button {
+    display: block;
+    color: #85A840;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav button {
+    float: right
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+/*Main */
 
 button {
     margin-bottom: 10px;
@@ -46,3 +105,5 @@ main {
     align-items: center;
     margin-top: 10%;
 }
+
+
