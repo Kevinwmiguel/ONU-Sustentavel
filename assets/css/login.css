@@ -1,4 +1,4 @@
-body{
+main{
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -43,4 +43,126 @@ body{
 
 .loading label{
     font-size: 2rem;
+}
+
+fieldset {
+    border: solid 2px black;
+    border-radius: 10px 10px 0 0;
+    padding: 0;
+}
+
+form {
+    background-color: #C7D9C4;
+    border-radius: 10px 10px 0 0;
+}
+
+form h2 {
+    text-align: center;
+}
+
+.h2div {
+    border-radius: 10px 10px 0 0;
+    background-color: #85AB7F;
+    border-bottom: solid 1px;
+}
+
+.emaildiv {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emaildiv label {
+    margin: 0 0 5px 10px;
+    font-size: 20px;
+    order: -1;
+}
+
+.emaildiv input {
+    padding: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+    border: rgba(255, 255, 255, 0.5);
+}
+
+input[type="email"]::placeholder {
+    padding-left: 15px;
+}
+
+.senhadiv {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.senhadiv label {
+    margin: 0 0 5px 10px;
+    font-size: 20px;
+    order: -1;
+}
+
+.senhadiv input {
+    padding: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+    border: rgba(255, 255, 255, 0.5);
+}
+
+input[type="password"]::placeholder {
+    padding-left: 15px;
+}
+
+.botoesdiv {
+    text-align: center;
+}
+
+.recsenha {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.recsenha button {
+    background-color: rgba(32, 65, 32, 0.6);
+    color: rgb(255, 255, 255);
+    border: 0;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#recover-password-button:not([disabled]) {
+    cursor: pointer; 
+    background-color: rgba(32, 65, 32);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+
+
+.entcad {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.entcad .botao1 {
+    background-color: rgba(32, 65, 32, 0.6);
+    color: rgb(255, 255, 255);
+    border: 0;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.entcad .botao2 {
+    background-color: rgba(32, 65, 32);
+    color: rgb(255, 255, 255);
+    border: 0;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.botao1:enabled {
+    cursor: pointer;
+    background-color: rgba(32, 65, 32);
+    color: rgb(255, 255, 255); 
 }

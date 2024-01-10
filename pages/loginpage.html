@@ -8,22 +8,45 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
     <script src="../assets/js/firebase-init.js"></script>
 </head>
-<body class="centralize">
-    <div class="formulario">
-        <form id="authForm">
-            <label>E-mail:</label>
-            <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="Email">
-            <div class="error" id="email-required-error">Email é obrigatório</div>
-            <div class="error" id="email-invalid-error">Email é invalido</div>
-            <label for="senha">Senha:</label>
-            <input type="password" name="password" onchange="onchangePassword()" id="password" required placeholder="Senha"> 
-            <div class="error" id="password-required-error">senha é obrigatória</div>
-            
-            <button disabled="true" id="recover-password-button" onclick="recoverPassword()">Recuperar senha</button>
-            <button type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
-            <button type="button" onclick="register()">Cadastrar</button>
-        </form>
-    </div>
+
+<body>
+    <header>
+        <div>
+            <h1>
+                Comunidade sustentável junior
+            </h1>
+        </div>
+    </header>
+
+    <main class="centralize">
+        <div class="formulario">
+            <fieldset>
+                <form id="authForm">
+                    <div class="h2div"><h2>Login</h2></div>
+                    <div class="emaildiv">
+                        <label>E-mail:</label>
+                        <input type="email" id="email" name="email" onchange="onchangeEmail()" required placeholder="Email">
+                        <div class="error" id="email-required-error">Email é obrigatório</div>
+                        <div class="error" id="email-invalid-error">Email é invalido</div>
+                    </div>
+                    <div class="senhadiv">
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="password" onchange="onchangePassword()" id="password" required placeholder="Senha"> 
+                        <div class="error" id="password-required-error">senha é obrigatória</div>    
+                    </div>
+                    <div class="botoesdiv">
+                        <div class="recsenha">
+                            <button disabled="true" id="recover-password-button" onclick="recoverPassword()">Esqueceu a senha</button>
+                        </div>
+                        <div class="entcad">
+                            <button class="botao1" type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
+                            <button class="botao2" type="button" onclick="register()">Cadastrar</button>
+                        </div>                
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </main>
 </body>
 
 <link rel="stylesheet" href="../assets/css/login.css">
