@@ -58,17 +58,25 @@ function register(){
     showLoading();
     const email = form.email().value;
     const password = form.password().value;
+    const nome = form.nome().value;
 
-    firebase.auth().createUserWithEmailAndPassword(
-        email, password
-    ).then(() => {
-        hideLoading();
-        window.location.href = "../pages/home.html";
-    }).catch(error => {
-        hideLoading();
-        alert(getErrorMessage(error));
-    })
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Após a criação da conta, adicione o nome do usuário à coleção "users" no Firestore
+            return firebase.firestore().collection("users").doc(userCredential.user.uid).set({
+                name: nome,
+            });
+        })
+        .then(() => {
+            hideLoading();
+            window.location.href = "../pages/home.html";
+        })
+        .catch(error => {
+            hideLoading();
+            alert(getErrorMessage(error));
+        });
 }
+
 
 function getErrorMessage(error){
     if (error.code == "auth/email-already-in-use"){
@@ -78,6 +86,7 @@ function getErrorMessage(error){
 }
 
 const form = {
+    nome: () => document.getElementById('nome'),
     confirmPassword: () => document.getElementById('confirmPassword'),
     confirmPasswordDoesntMatch: () => document.getElementById('password-doesnt-match-error'),
     email: () => document.getElementById('email'),

@@ -92,7 +92,7 @@ h1 {
     flex-direction: column;
 }
 
-.article{
+.article, .question, .tip{
     width: 80%;
     padding: 0;
     margin: 0;
@@ -101,6 +101,7 @@ h1 {
     box-shadow: 1vh 1vh 1vh #cfd1cc;
     border-radius: 10px;
 }
+
 
 .mainbar {
     display: flex;
@@ -113,18 +114,18 @@ h1 {
     font-weight: 550;
 }
 
-.article h2{
+.article h2, .question h2, .tip h2{
     width: 80%;
     margin-left: 10%;
     padding: 0;
     font-size: 1.2rem;
 }
 
-.article p{
+.article p, .question p, .tip p{
     text-align: center;
 }
 
-.article button {
+.article button , .question button, .tip button{
     margin-left: 90%;
     margin-bottom: 2%;
 }

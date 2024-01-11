@@ -28,52 +28,69 @@
             <li><a href="Contato.html">Contato</a></li>
             <button type="button" id="logout" onclick="logout()">Sair</button>
         </ul> 
+        <div class="titulo"><h1>Criar artigo</h1></div>
     </nav>
     
     <main>
-        <form>
-            <div>
-                <div><label>Artigo*</label></div>
-                <input id="article" type="radio" name="article">
-            </div>
-            <div>
-                <div><label>data*</label></div>
-                <input id="date" type="date" onchange="onChangeDate()">
-                <div class="error" id="date-required-error">
-                    Data obrigatória
+        <div class="estiloform">
+            <form>
+                
+                <div class="titlel">
+                    <div><label>Titulo*</label></div>
+                    <input id="title" type="text" oninput="onChangeTitle()">
+                    <div class="error" id="title-required-error">
+                        Titulo obrigatório
+                    </div>
                 </div>
-                <div class="error" id="date-invalid-error">
-                    Data inválida
+                <div class="title">
+                    <div><label>Data (automática)</label></div>
+                    <input readonly id="date" type="date" oninput="onChangeDate()">
+                </div>
+                <div class="descricao">
+                    <div><label>Descrição *</label></div>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="areaartigo">
+                    <div class="area">
+                        <div><label>Área *</label></div>
+                        <select onchange="onChangeType()" id="activity-area">
+                            <option value="">Área de atuação</option>
+                            <option>Casa</option>
+                            <option>Jardim</option>
+                            <option>Praça</option>
+                            <option>Praia</option>
+                            <option>Rua</option>
+                        </select>
+                        <div class="error" id="area-required-error">Área obrigatória</div>
+                    </div>
+                    <div class="artigo">
+                        <label class="labeltipo">Tipo *</label>
+                        <div>
+                            <div>
+                                <label>Artigo </label>
+                                <input id="article" type="radio" name="type">
+                            </div>
+                
+                            <div>
+                                <label>Questão </label>
+                                <input id="question" type="radio" name="type">
+                            </div>
+                
+                            <div>
+                                <label>Dica </label>
+                                <input id="tip" type="radio" name="type">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="botoes">
+                    <button type="button" disabled id="postButton" onclick="postArticle()">Publicar</button>
+                    <button type="button" onclick="cancelArticle()">Cancelar</button>
                 </div>
                 
-            </div>
-            <div>
-                <div><label>Titulo*</label></div>
-                <input id="title" type="text" oninput="onChangeTitle()">
-                <div class="error" id="title-required-error">
-                    Titulo obrigatório
-                </div>
-            </div>
-            <div>
-                <div><label>Descrição</label></div>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <div><label>Area*</label></div>
-                <select onchange="onChangeType()" id="activity-area">
-                    <option value="">Area de atuacao</option>
-                    <option>Jardim</option>
-                    <option>Casa</option>
-                    <option>Praia</option>
-                    <option>Rua</option>
-                </select>
-                <div class="error" id="area-required-error">
-                    Area obrigatória
-                </div>
-            </div>
-            <button type="button" disabled id="postButton" onclick="postArticle()">Publicar</button>
-            <button type="button" onclick="cancelArticle()">Cancelar</button>
-        </form>
+            </form>
+        </div>
+        
     </main>
     <footer>
         <p>&copy; 2023 Comunidade Sustentável Júnior</p>
@@ -81,4 +98,16 @@
 </body>
 <script src="../assets/js/article.js"></script>
 <script src="../assets/js/auth-guard.js"></script>
+<script>
+    // Adicionado código para obter o UID do artigo da URL
+    const articleUID = getArticleIDFromURL();
+    if (articleUID) {
+        findArticlesByUid(articleUID);
+    }
+
+    function getArticleIDFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('uid');
+    }
+</script>
 </html>

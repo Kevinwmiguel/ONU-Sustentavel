@@ -14,5 +14,5 @@ function hideLoading(){
     {
         loadings[0].remove();
     }
-    setTimeout(() => hideLoading(), 1000);
+    setTimeout(() => hideLoading(), 4000);
 }

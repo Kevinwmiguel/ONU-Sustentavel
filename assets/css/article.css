@@ -2,15 +2,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgba(34, 129, 14, 0.548);
+    background-color: rgba(255, 255, 255, 0.548);
 }
 
 input {
     border: none;
-}
-
-form {
-    width: 300px;
 }
 
 header > h1 , header > p{
@@ -34,6 +30,7 @@ nav ul {
     overflow: hidden;
     background-color: #1A3717;
     width: 100%;
+    height: 44px;
     top: 0;
 }
 
@@ -74,7 +71,28 @@ nav a:hover {
     transition: 1s;
 }
 
+h1 {
+    margin: 0;
+}
+.titulo {
+    text-align: center;
+    background-color: #85AB7F;
+    height: 2rem;
+    padding: 1vh;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /*Main */
+
+form {
+    border: solid 1px #85A840;
+    border-radius: 20px;
+    background-color: #85AB7F;
+}
 
 button {
     margin-bottom: 10px;
@@ -103,7 +121,139 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
+/*Estilo do formulario*/
 
+.estiloform {
+    border-radius: 15px 15px 0 0 ;
+    background-color: white;
+    width: 60rem;
+
+}
+
+.titlel {
+    border-radius: 15px 15px 0 0 ;
+    display: flex;
+    font-size: 1.4rem;
+    padding: 1.3rem 0 1.3rem 2rem;
+    background-color: #1A3717;
+    color: #85A840;
+}
+
+.titlel input {
+   border-radius: 10px;
+   width: 450px;
+   margin: 0 10px;
+}
+
+.title {
+    margin: 10px 2rem;
+    font-size: 10px;
+}
+
+.title input {
+    display: none;
+}
+
+.descricao {
+    margin: 1rem 2rem 1rem 2rem;
+    font-size: 1.4rem;
+}
+
+#title {
+    outline: none;
+    padding: 0 0 0 10px;
+    text-transform: capitalize;
+}
+
+.descricao textarea {
+    min-width: 99%;
+    max-width: 99%;
+    max-height: 15rem;
+    min-height: 15rem;
+    border: solid 1px #85A840;
+    border-radius: 5px;
+    resize: none;
+}
+
+#description {
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+#description:focus {
+    outline: none;
+    border: 1px solid #4a5e22; 
+}
+
+.areaartigo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 710px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.areaartigo > div {
+    flex: 1;
+    margin: 0 60px 0 0;
+}
+
+select {
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.artigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    align-items: flex-start;
+}
+
+.artigo > div {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+}
+
+.artigo input {
+    margin-right: 10px;
+}
+
+.artigo label {
+    margin-left: 20px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+button:hover {
+    background-color: #07c20d;
+    transition: 1s;
+}
+
+button[disabled] {
+    background-color: #A9A9A9;
+    cursor: not-allowed;
+}

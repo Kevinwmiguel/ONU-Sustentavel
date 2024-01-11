@@ -1,5 +1,5 @@
 const articleService = {
-    findByuser: user => {
+    findByUser: user => {
         return firebase.firestore()
             .collection('Artigos')
             .where('user.uid', '==', user.uid)
@@ -10,32 +10,42 @@ const articleService = {
                     ...doc.data(),
                     uid: doc.id
                 }));
-            })
+            });
     },
-    findByUID: uid =>{
+    findByUID: uid => {
         return firebase.firestore()
             .collection("Artigos")
             .doc(uid)
             .get()
             .then(doc => {
                 return doc.data();
-            })
+            });
     },
     remove: article => {
         return firebase.firestore()
             .collection("Artigos")
             .doc(article.uid)
-            .delete()
+            .delete();
     },
-    save: article => {
+    save: (article, userName) => {
+        const articleData = {
+            ...article,
+            user: {
+                uid: firebase.auth().currentUser.uid,
+                name: userName
+            },
+            // Verifica se article.date é uma instância de Date e não é nulo
+            date: article.date instanceof Date && !isNaN(article.date) ? formatDate(article.date) : null
+        };
+    
         return firebase.firestore()
             .collection('Artigos')
-            .add(article)
+            .add(articleData);
     },
     update: article => {
         return firebase.firestore()
             .collection("Artigos")
-            .doc(getArticleID())
-            .update(article)
+            .doc(article.uid)
+            .update(article);
     }
-}
+};
