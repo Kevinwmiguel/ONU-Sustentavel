@@ -54,7 +54,7 @@ function isFormValid(){
     return true;
 }
 
-function register(){
+function register() {
     showLoading();
     const email = form.email().value;
     const password = form.password().value;
@@ -62,9 +62,12 @@ function register(){
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            // Após a criação da conta, adicione o nome do usuário à coleção "users" no Firestore
-            return firebase.firestore().collection("users").doc(userCredential.user.uid).set({
+            const user = userCredential.user;
+
+            // Adicione o nome do usuário à coleção "users" no Firestore
+            return firebase.firestore().collection("users").doc(user.uid).set({
                 name: nome,
+                email: email, // opcional, você pode adicionar mais informações se desejar
             });
         })
         .then(() => {
@@ -76,6 +79,7 @@ function register(){
             alert(getErrorMessage(error));
         });
 }
+
 
 
 function getErrorMessage(error){

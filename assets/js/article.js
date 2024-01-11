@@ -41,11 +41,11 @@ function fillArticleScreen(article) {
     console.log("Article:", article);
 
     if (article.type == "article") {
-        form.articletype().checked = true;
-    } else if (article.type == "question"){
-        form.helptype().checked = true;
+        form.article().checked = true;  // Corrigido para usar form.article() ao invés de form.articletype()
+    } else if (article.type == "question") {
+        form.question().checked = true;  // Corrigido para usar form.question() ao invés de form.helptype()
     } else {
-        form.tipType().checked = true;
+        form.tip().checked = true;  // Corrigido para usar form.tip() ao invés de form.tipType()
     }
 
     if (article.date) {
@@ -140,9 +140,21 @@ function save(article, userName) {
 function createArticle() {
     const currentDate = new Date();
 
+    let type;
+    if (form.article().checked) {
+        type = "article";
+    } else if (form.question().checked) {
+        type = "question";
+    } else if (form.tip().checked) {
+        type = "tip";
+    } else {
+        // Se nenhum tipo estiver selecionado, pode lidar com isso de acordo com seus requisitos.
+        // Neste exemplo, defini como "article" por padrão.
+        type = "article";
+    }
+
     return {
-        
-        type: form.type().checked ? "article" : "question",
+        type: type,
         date: firebase.firestore.Timestamp.fromDate(currentDate),
         title: form.title().value,
         selectarea: form.selectarea().value,
@@ -153,6 +165,7 @@ function createArticle() {
         }
     };
 }
+
 
 
 function update(article) {
@@ -175,9 +188,9 @@ const form = {
     selectRequired: () => document.getElementById('area-required-error'),
     postButton: () => document.getElementById('postButton'),
     type: () => document.getElementById('article'),
-    articletype: () => document.getElementById('article'),
-    helptype: () => document.getElementById('question'),
-    tipType: () => document.getElementById('tip'),
+    article: () => document.getElementById('article'),  // Adicionado método para obter elemento com ID 'article'
+    question: () => document.getElementById('question'),  // Adicionado método para obter elemento com ID 'question'
+    tip: () => document.getElementById('tip'),  // Adicionado método para obter elemento com ID 'tip'
     description: () => document.getElementById('description') 
 }
 
@@ -187,8 +200,16 @@ function cancelArticle() {
 
 
 function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${month}-${day}-${year}`;
+    console.log(date);
+    if (typeof date === 'string') {
+        const [year, month, day] = date.split('-');
+        return `${day}/${month}/${year}`;
+    } else if (date instanceof Date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    } else {
+        return null;
+    }
 }
