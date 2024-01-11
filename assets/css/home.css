@@ -67,12 +67,15 @@ nav a:hover {
 
 h1 {
     margin: 0;
+    color: #a6e69e;
+    text-shadow: 2px 2px #223021;
 }
 .titulo {
     text-align: center;
     background-color: #85AB7F;
     height: 2rem;
     padding: 1vh;
+    
 }
 
 .cabecalho{
@@ -92,7 +95,7 @@ h1 {
     flex-direction: column;
 }
 
-.article, .question, .tip{
+.Artigo, .Questão, .Dica{
     width: 80%;
     padding: 0;
     margin: 0;
@@ -114,20 +117,20 @@ h1 {
     font-weight: 550;
 }
 
-.article h2, .question h2, .tip h2{
+.Artigo h2, .Questão h2, .Dica h2{
     width: 80%;
     margin-left: 10%;
     padding: 0;
     font-size: 1.2rem;
 }
 
-.article p, .question p, .tip p{
+.Artigo p, .Questão p, .Dica p{
     text-align: center;
 }
 
-.article button , .question button, .tip button{
-    margin-left: 90%;
-    margin-bottom: 2%;
+.Artigo button ,.Dica Button, .Questão button{
+    margin-left: 91%;
+    margin-top: 0%;
 }
 
 #addarticle {
@@ -142,9 +145,47 @@ h1 {
 }
 
 .addarticle {
-    width: 100%;
+    width: 100%;   
+}
+
+.desc {
+    max-height: 30vh;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    scrollbar-color: green transparent;
+    padding-right: 2%;
+    /* Para Microsoft Edge */
+    scrollbar-track-color: green;
+}
+
+.desc::-webkit-scrollbar {
+    width: 0.5vw;
     
 }
 
+.desc::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 128, 0, 0.452);
+    border-radius: 6px;
+    
+}
 
+.desc::-webkit-scrollbar-track {
+    background-color: transparent;
+    
+}
 
+.pin {
+    display: flex;
+    justify-content: space-around;
+}
+
+.docArea, .docType {
+    background-color: #85A840;
+    color: aliceblue;
+    font-weight: bolder;
+    padding: 0.4%;
+}

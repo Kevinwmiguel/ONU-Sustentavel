@@ -6,25 +6,26 @@
     <title>Register</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script src="../assets/js/firebase-init.js"></script>
 </head>
 <body>
     <header>
         <div class="headerdiv">
-            <h1>
-                Comunidade sustentável júnior
-            </h1>
+            <div class="back-button-container">
+                <a href="../index.html"><img src="../assets/img/bx_x.png" alt="Voltar" class="back-button"></a>
+            </div>
+            <div class="title-container">
+                <h1>Comunidade sustentável júnior</h1>
+            </div>
         </div>
-    </header> 
+    </header>
     <main class="centralize">
         <div class="formulario">
             <fieldset>
                 <form class="form-field">
                     <div class="h2div"><h2>Cadastro</h2></div>
-                    <div class="nomediv">
-                        <div><label>Nome</label></div>
-                        <input id="nome" type="text" placeholder="Seu Nome aqui">
-                    </div>
+                    
                     <div class="emaildiv">
                         <div><label>Email</label></div>
                         <input id="email" type="email" placeholder="seu@email.com" onchange="onChangeEmail()">
@@ -59,13 +60,14 @@
     </main>
     <footer>
         <div class="footerdiv">
-            <h4>© 2023 Comunidade Sustentável Júnior</h4>
+            <p>&copy; 2023 Comunidade Sustentável Júnior</p>
         </div>
     </footer>
 </body>
 <link rel="stylesheet" href="../assets/css/register.css">
-<script src="../assets/js/register.js"></script>
+
 <script src="../assets/js/validate.js"></script>
+<script src="../assets/js/register.js"></script>
 <script src="../assets/js/loading.js"></script>
 </html>
 

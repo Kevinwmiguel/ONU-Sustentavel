@@ -142,15 +142,15 @@ function createArticle() {
 
     let type;
     if (form.article().checked) {
-        type = "article";
+        type = "Artigo";
     } else if (form.question().checked) {
-        type = "question";
+        type = "Questão";
     } else if (form.tip().checked) {
-        type = "tip";
+        type = "Dica";
     } else {
         // Se nenhum tipo estiver selecionado, pode lidar com isso de acordo com seus requisitos.
         // Neste exemplo, defini como "article" por padrão.
-        type = "article";
+        type = "Artigo";
     }
 
     return {

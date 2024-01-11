@@ -1,3 +1,4 @@
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         window.location.href = "../pages/home.html";
@@ -56,28 +57,18 @@ function isFormValid(){
 
 function register() {
     showLoading();
+
     const email = form.email().value;
     const password = form.password().value;
-    const nome = form.nome().value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-
-            // Adicione o nome do usuário à coleção "users" no Firestore
-            return firebase.firestore().collection("users").doc(user.uid).set({
-                name: nome,
-                email: email, // opcional, você pode adicionar mais informações se desejar
-            });
-        })
-        .then(() => {
-            hideLoading();
-            window.location.href = "../pages/home.html";
-        })
-        .catch(error => {
-            hideLoading();
-            alert(getErrorMessage(error));
-        });
+    firebase.auth().createUserWithEmailAndPassword(
+        email, password
+    ).then(() => {
+        hideLoading();
+        window.location.href = "../pages/community.html";
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    })
 }
 
 
@@ -90,7 +81,7 @@ function getErrorMessage(error){
 }
 
 const form = {
-    nome: () => document.getElementById('nome'),
+    
     confirmPassword: () => document.getElementById('confirmPassword'),
     confirmPasswordDoesntMatch: () => document.getElementById('password-doesnt-match-error'),
     email: () => document.getElementById('email'),

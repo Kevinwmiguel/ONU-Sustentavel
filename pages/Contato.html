@@ -7,40 +7,58 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/contatos.css">
     <title>Comunidade Sustentável Júnior</title>
+
+    <script src="../assets/js/loading.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/articles-services-comunity.js"></script>
+    <script src="../assets/js/firebase-init.js"></script>
 </head>
 
 <body>
+    <header>
+        <h1>Comunidade Sustentável Júnior</h1>
+        <p>Transformando a sociedade com inovação e sustentabilidade</p>
+    </header>
     <nav>
-        <ul>
+        <ul class="cabecalho">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html">Sobre</a></li>
-            <li><a href="../Contato.html">Contato</a></li>
-            <button type="button" id="logout" onclick="logout()">Sair</button>
+            <li><a href="../pages/Contato.html">Contato</a></li>
+            <li><a href="../pages/loginpage.html" class="login">LOGIN</a></li>
         </ul> 
+        <div class="titulo"><h1>Redes sociais</h1></div>
     </nav>
-    <header>
-        <div class="headerdiv">
-            <h1> 
-                Comunidade sustentável júnior
-            </h1>
-        </div>
-    </header>
-    <div class="barra-verde "></div>
-
     <main>
         <div class="tatil">
-            <h1>Resdes sociais</h1>
-        </div>
-        <div class="icon">
-            <span><img src="" alt=""></span>
+            <div class="todos">
+                <div class="icon">
+                    <div>
+                        <h2>Email</h2>
+                        <a href="mailto:kevincursos@outlook.com"><img width="48" height="48" src="https://img.icons8.com/color/48/gmail--v1.png" alt="gmail--v1"/></a>
+                    </div>
+                   <div>
+                        <h2>LinkedIn</h2>
+                        <a href="https://www.linkedin.com/in/kevin-miguel-0004b8191/"><img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/></a>
+                   </div>
+                    <div>
+                        <h2>GitHub</h2>
+                        <a href="https://github.com/Kevinwmiguel"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/github.png" alt="github"/></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2023 Comunidade Sustentável Júnior</p>
+        <div class="footerdiv">
+            <p>&copy; 2023 Comunidade Sustentável Júnior</p>
+        </div>
     </footer>
-
-    <script src="assets/js/scripts.js"></script>
+    <script src="../assets/js/contact.js"></script>
+    
+    <script src="../assets/js/logout.js"></script>
 </body>
 
 </html>

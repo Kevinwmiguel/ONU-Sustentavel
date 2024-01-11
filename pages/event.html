@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Evento</title>
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/event.css">
     <script src="../assets/js/loading.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
@@ -28,27 +29,47 @@
         </ul> 
     </nav>
     
-
-   
+    <main class="events-grid">
+        <div class="event">
+            <img src="../assets/img/banner.jpg" alt="Evento 1">
+            <div class="overlay">
+                <p>Em breve</p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="../assets/img/banner.jpg" alt="Evento 2">
+            <div class="overlay">
+                <p>Em breve</p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="../assets/img/banner.jpg" alt="Evento 3">
+            <div class="overlay">
+                <p>Em breve</p>
+            </div>
+        </div>
+    </main>
+   <!--
     <main>
         
-        <div class="titulo"><h1>Meus Artigos</h1></div>
+        <div class="titulo"><h1>Eventos</h1></div>
         <div class="addarticle">
             <button class="fab" type="button" id="addarticle" onclick="createArticle()"><img width="30" src="../assets/img/Vector.png" alt="">Novo</button>
         </div>
         <ol id="main-articles">
-            <div id="h2div"> <!-- Mantenha o mesmo ID usado no registro -->
-                 <!-- Adicione esta linha para exibir o nome do usuário -->
+            <div id="h2div">
+                 
             </div>
         </ol>
         
     </main>
+    -->
     <footer>
         <div class="footerdiv">
             <p>&copy; 2023 Comunidade Sustentável Júnior</p>
         </div>
     </footer>
 </body>
-<script src="../assets/js/home.js"></script>
+<script src="../assets/js/logout.js"></script>
 <script src="../assets/js/auth-guard.js"></script>
 </html>

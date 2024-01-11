@@ -22,10 +22,10 @@
     </header>
     <nav>
         <ul class="cabecalho">
-            <li><a href="#home">Comunidade</a></li>
-            <li><a href="#about">Perfil</a></li>
+            <li><a href="../pages/community.html">Comunidade</a></li>
+            <li><a href="../pages/event.html">Evento</a></li>
             <li><a href="../pages/home.html">Meus Artigos</a></li>
-            <li><a href="Contato.html">Contato</a></li>
+            <li><a href="../pages/Contato.html">Contato</a></li>
             <button type="button" id="logout" onclick="logout()">Sair</button>
         </ul> 
         <div class="titulo"><h1>Criar artigo</h1></div>
@@ -37,7 +37,7 @@
                 
                 <div class="titlel">
                     <div><label>Titulo*</label></div>
-                    <input id="title" type="text" oninput="onChangeTitle()">
+                    <input maxlength="90" id="title" type="text" oninput="onChangeTitle()" required>
                     <div class="error" id="title-required-error">
                         Titulo obrigatório
                     </div>
@@ -93,7 +93,9 @@
         
     </main>
     <footer>
-        <p>&copy; 2023 Comunidade Sustentável Júnior</p>
+        <div class="footerdiv">
+            <p>&copy; 2023 Comunidade Sustentável Júnior</p>
+        </div>
     </footer>
 </body>
 <script src="../assets/js/article.js"></script>

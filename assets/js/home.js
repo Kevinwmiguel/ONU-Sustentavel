@@ -8,29 +8,13 @@ function logout() {
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        // Consultar o nome do usuário no Firestore
-        firebase.firestore().collection("users").doc(user.uid).get()
-            .then(doc => {
-                if (doc.exists) {
-                    const nomeUsuario = doc.data().name;
-                    // Faça o que quiser com o nome do usuário (por exemplo, exibir na página)
-                    document.getElementById('nome-usuario').innerText = `Bem-vindo, ${nomeUsuario}!`;
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao obter o nome do usuário:", error);
-            });
-
         findArticles(user);
     }
 });
 
-
 function createArticle() {
     window.location.href = '../pages/add-article.html';
 }
-
-
 
 function findArticles(user) {
     showLoading();
@@ -63,16 +47,25 @@ function addArticlesToScreen(articles) {
         novaDiv.appendChild(pDate);  // Adiciona o parágrafo com a data
         li.appendChild(novaDiv);
         if (article.description) {
-            li.appendChild(createParagraph(article.description));
+            const description = createParagraph(article.description);
+            description.classList.add('desc');
+            li.appendChild(description);
         }
         li.appendChild(createDeleteButton(article));
-        const type = createParagraph(article.type);
-        li.appendChild(type);
-        const areadeatuacao = createParagraph(article.selectarea);
-        li.appendChild(areadeatuacao);
-        
-        console.log(article.type);
-        
+
+        const pin = document.createElement('div');
+
+        const type = createParagraph(`Tipo de postagem: ${article.type}`);
+        type.classList.add('docType');
+        pin.appendChild(type);
+
+        const areadeatuacao = createParagraph(`Área de atuação: ${article.selectarea}`);
+        areadeatuacao.classList.add('docArea');
+        pin.appendChild(areadeatuacao);
+
+        pin.classList.add('pin');
+        li.appendChild(pin);
+
         orderedList.appendChild(li);
     });
 }
@@ -81,7 +74,6 @@ function createArticleListItem(article) {
     const li = document.createElement('li');
     li.classList.add(article.type);
     li.id = article.uid;
-    
     return li;
 }
 

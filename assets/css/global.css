@@ -1,3 +1,16 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 30px;
+}
+
 .error{
     color: red;
     display: none;
@@ -18,19 +31,34 @@ header {
     background-image: url(../img/banner.jpg);
 }
 
+
+
 footer {
-    background-color: #85AB7F;
-    color: #C7D9C4;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
-    bottom: 0;
     width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    bottom: 0;
+}
+
+.footerdiv {
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    background-color: #85AB7F;
+    padding-top: 0.001%;
 }
 
 .barra-verde {
     height: 4vh;
     background-color: #1A3717;
+}
+
+.outline {
+    width: 6%;
+    border-radius: 20px;
+    padding: 0.7vh;
+    background-color: rgba(214, 52, 52, 0.795);
+    font-weight: bolder;
+    cursor: pointer;
 }

@@ -67,15 +67,12 @@ nav a:hover {
 
 h1 {
     margin: 0;
-    color: #a6e69e;
-    text-shadow: 2px 2px #223021;
 }
 .titulo {
     text-align: center;
     background-color: #85AB7F;
     height: 2rem;
     padding: 1vh;
-    
 }
 
 .cabecalho{
@@ -95,7 +92,7 @@ h1 {
     flex-direction: column;
 }
 
-.Artigo, .Questão, .Dica{
+.article, .question, .tip{
     width: 80%;
     padding: 0;
     margin: 0;
@@ -117,20 +114,20 @@ h1 {
     font-weight: 550;
 }
 
-.Artigo h2, .Questão h2, .Dica h2{
+.article h2, .question h2, .tip h2{
     width: 80%;
     margin-left: 10%;
     padding: 0;
     font-size: 1.2rem;
 }
 
-.Artigo p, .Questão p, .Dica p{
+.article p, .question p, .tip p{
     text-align: center;
 }
 
-.Artigo button {
+.article button , .question button, .tip button{
     margin-left: 90%;
-    margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 #addarticle {
@@ -145,47 +142,63 @@ h1 {
 }
 
 .addarticle {
-    width: 100%;  
-}
-
-.desc {
-    max-height: 30vh;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    overflow-y: scroll;
-    overflow-wrap: break-word;
-    scrollbar-color: green transparent;
-    padding-right: 2%;
-    /* Para Microsoft Edge */
-    scrollbar-track-color: green;
-}
-
-.desc::-webkit-scrollbar {
-    width: 0.5vw;
+    width: 100%;
     
 }
 
-.desc::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 128, 0, 0.452);
-    border-radius: 6px;
-    
-}
-
-.desc::-webkit-scrollbar-track {
-    background-color: transparent;
-    
-}
-
-.pin {
+.main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.docArea, .docType {
-    background-color: #85A840;
-    color: aliceblue;
-    font-weight: bolder;
-    padding: 0.4%;
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.event {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.event img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.overlay p {
+    margin: 0;
+}
+
+@media (max-width: 980px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .events-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
