@@ -8,6 +8,7 @@ header > h1 , header > p{
     color: #85AB7F;
     text-shadow: 2px 2px #1a3717;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 header > p {
@@ -128,10 +129,7 @@ h1 {
     text-align: center;
 }
 
-.Artigo button ,.Dica Button, .Questão button{
-    margin-left: 91%;
-    margin-top: 0%;
-}
+
 
 #addarticle {
     background-color: #C7D9C4;
@@ -177,6 +175,19 @@ h1 {
     background-color: transparent;
     
 }
+
+.Removedora {
+    width: 100%;
+    justify-content: right;
+    display: flex;
+}
+
+.Removedora button{
+    margin-right: 15%;
+    width: 25vw;
+    font-size: 1.5vh;
+}
+
 
 .pin {
     display: flex;

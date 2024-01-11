@@ -105,7 +105,7 @@ main {
 /*About*/
 
 #about {
-    height: 90vh;
+    height: auto;
 }
 
 .sobre{
@@ -118,3 +118,4 @@ main {
     text-align: center;
     font-size: 1.2rem;
 }
+

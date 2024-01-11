@@ -47,6 +47,9 @@ footer {
     height: 50px;
     background-color: #85AB7F;
     padding-top: 0.001%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .barra-verde {

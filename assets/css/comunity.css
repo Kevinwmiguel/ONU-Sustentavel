@@ -8,6 +8,7 @@ header > h1 , header > p{
     color: #85AB7F;
     text-shadow: 2px 2px #1a3717;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 header > p {

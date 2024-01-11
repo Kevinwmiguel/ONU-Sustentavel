@@ -8,6 +8,7 @@ header > h1 , header > p{
     color: #85AB7F;
     text-shadow: 2px 2px #1a3717;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 header > p {
@@ -189,6 +190,14 @@ h1 {
 
 .overlay p {
     margin: 0;
+}
+
+.eventcontato {
+    font-size: 15px;
+    width: 100%;
+    background-color: #f9f5f500;
+    text-align: center;
+    color: #668031;
 }
 
 @media (max-width: 980px) {

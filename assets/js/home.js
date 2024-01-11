@@ -51,7 +51,11 @@ function addArticlesToScreen(articles) {
             description.classList.add('desc');
             li.appendChild(description);
         }
-        li.appendChild(createDeleteButton(article));
+        const removeDiv = document.createElement('div');
+        const deleted = createDeleteButton(article)
+        removeDiv.appendChild(deleted);
+        removeDiv.classList.add('Removedora')
+        li.appendChild(removeDiv);
 
         const pin = document.createElement('div');
 
