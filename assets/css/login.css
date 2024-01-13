@@ -259,3 +259,66 @@ input[type="password"]::placeholder {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+@media screen and (max-width: 370px) {
+    form h2 {
+        font-size: 20px;
+    }
+    fieldset {
+        width: 10%;
+    }
+    .emaildiv
+    .senhadiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+    .emaildiv label {
+        font-size: 1rem;
+    }
+    .senhadiv label {
+        font-size: 1rem;
+    }
+    .emaildiv input {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    .senhadiv input {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    .recsenha button {
+        background-color: rgba(32, 65, 32, 0.6);
+        color: rgb(255, 255, 255);
+        border: 0;
+        margin-top: 1rem;
+        box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+        margin-bottom: 20px;
+        padding: 0.6rem 2rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .entcad .botao1 {
+        background-color: rgba(32, 65, 32, 0.6);
+        color: rgb(255, 255, 255);
+        border: 0;
+        box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+        margin-bottom: 20px;
+        padding: 0rem 1rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .entcad .botao2 {
+        background-color: rgba(32, 65, 32);
+        color: rgb(255, 255, 255);
+        border: 0;
+        box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.6);
+        margin-bottom: 20px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+}
