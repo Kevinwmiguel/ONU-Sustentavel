@@ -1,18 +1,24 @@
-function showLoading(){
-    const div = document.createElement("div");
-    div.classList.add("loading", "centralize");
+let loaderInterval;
 
-    const label = document.createElement("label");
-    label.innerText = "Carregando...";
+function showLoading() {
+    // Mostrar o loader
+    const loader = document.createElement('div');
+    loader.className = 'loader';
+    document.body.appendChild(loader);
 
-    div.appendChild(label);
-    document.body.appendChild(div)
-}
-function hideLoading(){
-    const loadings = document.getElementsByClassName("loading");
-    if (loadings.length)
-    {
-        loadings[0].remove();
+    // Iniciar uma animação de loader
+    let rotation = 0;
+    loaderInterval = setInterval(() => {
+      loader.style.transform = `rotate(${rotation}deg)`;
+      rotation += 5;
+    }, 50);
+  }
+
+  function hideLoading() {
+    // Esconder o loader
+    const loader = document.querySelector('.loader');
+    if (loader) {
+      document.body.removeChild(loader);
+      clearInterval(loaderInterval);
     }
-    setTimeout(() => hideLoading(), 4000);
-}
+  }

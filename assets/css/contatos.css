@@ -142,7 +142,7 @@ main .tatil h1 {
 .icon img {
     width: 5rem;
     height: 5rem; 
-    animation: spin 5s linear infinite;
+    animation: spinI 5s linear infinite;
     transform-style: preserve-3d;
 }
 
@@ -150,7 +150,7 @@ main .tatil h1 {
     margin: 0 10rem 0 10rem;
 }
 
-@keyframes spin {
+@keyframes spinI {
     0% {
         transform: rotateY(0deg);
     }
@@ -171,4 +171,22 @@ main .tatil h1 {
     .icon h2 {
         font-size: 1.2rem;
     }
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px;
+    margin-left: -60px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
