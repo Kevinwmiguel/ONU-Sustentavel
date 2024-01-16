@@ -46,4 +46,4 @@ Kevin Willians Miguel
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença XYZ] - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+Código Aberto
