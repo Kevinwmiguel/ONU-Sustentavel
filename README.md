@@ -1,4 +1,4 @@
-# ONU Junior Sustentável
+Ke# ONU Junior Sustentável
 
 ## Descrição
 
@@ -42,7 +42,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues, propor m
 
 ## Autor
 
-[Seu Nome]
+Kevin Willians Miguel
 
 ## Licença
 
