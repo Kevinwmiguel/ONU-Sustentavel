@@ -18,7 +18,7 @@ Bem-vindo ao ONU Junior Sustentável, um projeto dedicado a promover a conscient
 
 ## Como Utilizar
 
-No link: - Link de acesso do Site : https://kevinwmiguel.github.io/ONU-Sustentavel/
+- Link de acesso do Site : https://kevinwmiguel.github.io/ONU-Sustentavel/
 
 
 
